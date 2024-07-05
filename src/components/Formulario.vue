@@ -1,4 +1,12 @@
 <script setup>
+
+import { reactive } from 'vue';
+
+const busqueda = reactive({
+    ciudad: '',
+    pais: ''
+})
+
 const paises = [
     { codigo: 'US', nombre: 'Estados Unidos' },
     { codigo: 'MX', nombre: 'México' },
@@ -14,12 +22,12 @@ const paises = [
     <form action="" class="formulario">
         <div class="campo">
             <label for="ciudad">Ciudad</label>
-            <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad">
+            <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad" v-model="busqueda.ciudad">
         </div>
 
         <div class="campo">
             <label for="pais">Pais</label>
-            <select id="pais">
+            <select id="pais" v-model="busqueda.pais">
                 <option value="">-- Seleccione un país --</option>
                 <option v-for="pais in paises" value=":pais.codigo">{{ pais.nombre }}</option>
             </select>
