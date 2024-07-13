@@ -4,6 +4,7 @@ import Formulario from './components/Formulario.vue'
 import useClima from './composables/useClima';
 
 const { obtenerClima } = useClima()
+
 </script>
 
 <template>
